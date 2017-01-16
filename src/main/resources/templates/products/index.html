@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title>System Eccomerce</title>
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Zdjęcia</p>
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt=""/>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="thumbnail">
+
+                <div class="caption-full">
+                    <h4 class="pull-right" th:text="${product.price}">Cena</h4>
+                    <h4 th:text="${product.title}">Nazwa produktu</h4>
+
+                    <p th:text="${product.description}"></p>
+
+                    <div class="text-right">
+                        <a th:href="@{/cart/add/{id}/(id=${product.id})}" class="btn btn-success">Dodaj do koszyka</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+<footer th:replace="layout :: site-footer" />
+</body>
+</html>

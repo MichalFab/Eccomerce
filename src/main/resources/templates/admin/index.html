@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="layout :: site-head">
+    <title>Sklep online - Twoje konto</title>
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+
+
+<!-- Page Content -->
+<div class="container">
+
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <img src="../../static/img/man.png" style=" height: 180px;  align-content: inherit; float:right"/>
+        <h2>All4Man</h2>
+        <p>Największy sklep z luksusową odzieżą męską oraz akcesoriami dla panów. Zapraszamy do zakupów!</p>
+
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Panel administracyjny</h2>
+
+            <a href="#" th:href="@{/admin/add}" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-pencil"></span> <br/>Dodaj produkt</a>
+            <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-refresh"></span> <br/>Edytuj produkty</a>
+            <a href="#" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-trash"></span> <br/>Usuń produkty</a>
+
+        </div>
+
+        <div class="col-lg-12">
+
+        <a href="#" style="margin-top: 15px" th:href="@{/admin/orders}" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-refresh"></span> <br/>Zamówienia użytkowników</a>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    </hr>
+</div>
+
+</body>
+</html>

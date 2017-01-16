@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="layout :: site-head">
+    <title>Sklep online - Twoje konto</title>
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+
+
+<!-- Page Content -->
+<div class="container">
+
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <img src="../../static/img/man.png" style=" height: 180px;  align-content: inherit; float:right"/>
+        <h2>All4Man</h2>
+        <p>Największy sklep z luksusową odzieżą męską oraz akcesoriami dla panów. Zapraszamy do zakupów!</p>
+
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+
+            <form th:action="@{/admin/add}" th:object="${product}"  class="form-horizontal" method="post" >
+                <h2>Nazwa przedmiotu</h2>
+                <div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Tytuł</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{title}"  class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="category" class="col-sm-3 control-label">Kategoria</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{category}"  class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-sm-3 control-label">Ilość</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{amount}" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="shortDesc" class="col-sm-3 control-label">Krótki opis</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{shortDesc}" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-3 control-label">Opis</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{description}" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="price" class="col-sm-3 control-label">Cena</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{price}" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="image" class="col-sm-3 control-label">
+                        <div class="col-sm-9">
+                        <input type="file"  class="custom-file-input"/>
+                        <span class="custom-file-control"></span>
+                        </div>
+                    </label>
+                </div>
+                <input type="submit" class="btn btn-info" value="Dodaj"/>
+
+
+
+
+
+            </form>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    </hr>
+</div>
+
+</body>
+</html>

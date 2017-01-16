@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="layout :: site-head">
+    <title>Sklep online - Twoje konto</title>
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+
+
+<!-- Page Content -->
+<div class="container">
+
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <img src="../../static/img/man.png" style=" height: 180px;  align-content: inherit; float:right"/>
+        <h2>All4Man</h2>
+        <p>Największy sklep z luksusową odzieżą męską oraz akcesoriami dla panów. Zapraszamy do zakupów!</p>
+
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+
+            <form class="form-horizontal" method="post" role="form" th:action="@{/updateUser}" th:object="${user}">
+                <h2>Twoje dane</h2>
+                <div class="form-group">
+                <label for="fullName" class="col-sm-3 control-label">Imię i nazwisko</label>
+                <div class="col-sm-9">
+                    <input type="text" id="fullName" th:value="${user.fullName}" class="form-control" />
+
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Adres E-mail</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="email" th:value="${user.email}" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="street" class="col-sm-3 control-label">Ulica</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="street" th:value="${user.street}" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                <label for="city" class="col-sm-3 control-label">Miasto</label>
+                <div class="col-sm-9">
+                    <input type="text" id="city" th:value="${user.city}" class="form-control" />
+
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label for="postCode" class="col-sm-3 control-label">Kod pocztowy</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="postCode" th:value="${user.postCode}" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <input type="submit"  th:align="right" class="btn btn-primary btn-block" value="Aktualizauj" />
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    </hr>
+</div>
+
+</body>
+</html>

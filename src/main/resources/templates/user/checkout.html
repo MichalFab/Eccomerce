@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="layout :: site-head">
+    <title>Sklep online - Twoje konto</title>
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+
+
+<!-- Page Content -->
+<div class="container">
+
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <img src="../../static/img/man.png" style=" height: 180px;  align-content: inherit; float:right"/>
+        <h2>All4Man</h2>
+        <p>Największy sklep z luksusową odzieżą męską oraz akcesoriami dla panów. Zapraszamy do zakupów!</p>
+
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Podsumowanie Twojego zamówienia</h2>
+
+            <table class="table table-hover">
+                <thead>
+                <tr> <th>#</th> <th>Produkt</th> <th>Cena</th> <th>Suma</th> </tr>
+                </thead>
+                <tbody>
+                <tr th:each="p : ${allProducts}">
+                    <th scope="row"></th>
+                    <td th:text="${p.title}">Tytul</td> <td th:text="${p.price}">cena</td> <td></td>
+                </tr>
+                <tr>
+                <th scope="row"></th>
+                <td></td> <td></td> <td th:text="${totalPrice}">Suma</td> </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    </hr>
+</div>
+
+</body>
+</html>

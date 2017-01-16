@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="layout :: site-head">
+    <title>Sklep online - Twoje konto</title>
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+
+
+<!-- Page Content -->
+<div class="container">
+
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <img src="../../static/img/man.png" style=" height: 180px;  align-content: inherit; float:right"/>
+        <h2>All4Man</h2>
+        <p>Największy sklep z luksusową odzieżą męską oraz akcesoriami dla panów. Zapraszamy do zakupów!</p>
+
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row text-center">
+
+        <div th:if="${param.text}">
+            <center><h2 th:text="${param.text[0]}"></h2></center>
+        </div>
+
+        <div th:if="${#lists.isEmpty(allProducts)}">
+           <h3>Twój koszyk jest pusty. </h3>
+            <a href="#" th:href="@{/}" class="btn btn-default">Wróć do produktów</a>
+
+        </div>
+
+        <div class="col-lg-12">
+            <h3>Twój koszyk</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr> <th>#</th> <th>Produkt</th> <th>Cena</th> <th>Usuń</th> </tr>
+                </thead>
+                <tbody>
+                <tr th:each="p : ${allProducts}">
+                    <th scope="row"></th>
+                    <td th:align="left" th:text="${p.title}">Tytul</td> <td th:align="left" th:text="${p.price}">cena</td>
+                    <td th:align="left" >  <a href="#" th:href="@{/cart/remove/{id}/(id=${p.id})}" class="btn btn-danger">Usuń z koszyka</a></td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td> <td></td> <td th:text="${totalPrice}">Suma</td> </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="#" th:href="@{/}"  th:align="right" class="btn btn-info">Wróć do zakupów</a>
+        <a href="#" th:href="@{/checkout/}"  th:align="right" class="btn btn-info">Zamów produkty</a>
+
+
+    </div>
+    <!-- /.row -->
+
+
+
+    </hr>
+</div>
+
+</body>
+</html>
