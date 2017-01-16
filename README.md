@@ -1,1 +1,3 @@
-# Eccomerce App use Spring Boot and Spring Security.
+# Eccomerce App use Spring Boot, Spring Security and:
+-Maven
+-Thymeleaf
