@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="layout :: site-head">
-    <title>Welcome to Spring MVC Blog</title>
+    <title>Welcome to Spring Eccomerce System</title>
 </head>
 <body>
-<header th:replace="layout :: site-header" />
+<header  th:replace="layout :: site-header" />
 <!-- Page Content -->
 <div class="container">
 
@@ -13,7 +13,7 @@
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">
         <img src="../static/img/man.png" style=" height: 180px;  align-content: inherit; float:right"/>
-        <h2>All4Man</h2>
+        <h2 class="project-title">All4Man</h2>
         <p>Największy sklep z luksusową odzieżą męską oraz akcesoriami dla panów. Zapraszamy do zakupów!</p>
 
     </header>
@@ -40,12 +40,12 @@
         <div class="col-md-3 col-sm-6 hero-feature" th:each="p: ${allProducts}">
             <div class="thumbnail">
                 <img src="http://placehold.it/800x500" alt=""/>
-                <div class="caption">
+                <div class="caption" id="product">
                     <h3 th:text="${p.title}">Tytul</h3>
                     <p th:text="${p.shortDesc}">Krotki opis</p>
                     <p>
-                        <a href="#" th:href="@{/cart/add/{id}/(id=${p.id})}" class="btn btn-primary">Dodaj do Koszyka</a>
-                        <a href="#" th:href="@{/product/{id}/(id=${p.id})}" class="btn btn-default">Info</a>
+                        <a href="#" id="basketbutton" th:href="@{/cart/add/{id}/(id=${p.id})}" class="btn btn-primary">Dodaj do Koszyka</a>
+                        <a href="#" id="info" th:href="@{/product/{id}/(id=${p.id})}" class="btn btn-default">Info</a>
                     </p>
                 </div>
             </div>
